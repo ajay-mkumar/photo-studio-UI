@@ -2,7 +2,11 @@ function NavBar() {
   return (
     <div className="flex items-center justify-between h-16 px-6 relative">
       {/* Left: Logo */}
-      <h3 className="text-xl font-semibold text-gray-700 z-10">Aj Studio</h3>
+      <h3 className="text-xl font-semibold text-gray-700 z-10 leading tight">
+        {" "}
+        <span className="block">Aj</span>
+        <span className="block">Studio</span>
+      </h3>
 
       {/* Center: Menu */}
       <div className="absolute  left-1/2 transform -translate-x-1/2 ">
@@ -23,7 +27,7 @@ function NavBar() {
       </div>
 
       {/* Right: Button */}
-      <button className="border-pink text-red-500 px-6 py-1 cursor-pointer rounded shadow hover:bg-red-500 hover:text-white transition duration-200 z-10">
+      <button className="border-pink text-red-500 px-6 py-1 cursor-pointer border rounded-lg shadow hover:bg-red-500 hover:text-white transition duration-200 z-10">
         Hire us
       </button>
     </div>
