@@ -1,4 +1,4 @@
-import portfolio from "../../public/images/portfolio.jpg";
+import portfolio from "../../../public/images/portfolio.jpg";
 
 function PortfolioCard() {
   return (

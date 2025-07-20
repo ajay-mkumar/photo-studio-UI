@@ -1,5 +1,5 @@
-import { HIRE_US } from "../constants/constants";
-import { useModal } from "../context/ModalContext";
+import { HIRE_US } from "../../constants/constants";
+import { useModal } from "../../context/ModalContext";
 
 function NavBar() {
   const { toggleModal } = useModal();

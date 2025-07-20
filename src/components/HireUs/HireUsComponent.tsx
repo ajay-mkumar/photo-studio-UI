@@ -1,5 +1,5 @@
-import { HOMEPAGE } from "../constants/constants";
-import { useModal } from "../context/ModalContext";
+import { HOMEPAGE } from "../../constants/constants";
+import { useModal } from "../../context/ModalContext";
 
 function HireUsComponent() {
   const { toggleModal } = useModal();

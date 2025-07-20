@@ -1,4 +1,4 @@
-import icon from "../../public/images/icons8-camera-100.png";
+import icon from "../../../public/images/icons8-camera-100.png";
 
 function ExpertiseComponent() {
   return (
