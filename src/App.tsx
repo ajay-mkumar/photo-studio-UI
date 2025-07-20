@@ -1,3 +1,4 @@
+import HireUsComponent from "./components/HireUsComponent";
 import HomePage from "./components/HomePage";
 import NavBar from "./components/NavBar";
 import { HIRE_US, HOMEPAGE } from "./constants/constants";
@@ -11,7 +12,7 @@ function AppContent() {
     <>
       <NavBar />
       {modal === HOMEPAGE && <HomePage />}
-      {modal === HIRE_US && <p>hire</p>}
+      {modal === HIRE_US && <HireUsComponent />}
     </>
   );
 }
