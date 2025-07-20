@@ -1,6 +1,9 @@
 import portfolio from "../../../public/images/portfolio.jpg";
+import { PORTFOLIO } from "../../constants/constants";
+import { useModal } from "../../context/ModalContext";
 
 function PortfolioCard() {
+  const { toggleModal } = useModal();
   return (
     <div
       id="photo-section"
@@ -22,9 +25,12 @@ function PortfolioCard() {
           precision and passion.
         </p>
         <div className="mt-10">
-        <button className="w-50 bg-red-600 text-white font-semibold py-3 rounded-xl hover:bg-red-900 transition duration-300 shadow-md">
-          Explore Our Portfolio
-        </button>
+          <button
+            onClick={() => toggleModal(PORTFOLIO)}
+            className="w-50 bg-red-600 text-white font-semibold py-3 rounded-xl hover:bg-red-900 transition duration-300 shadow-md"
+          >
+            Explore Our Portfolio
+          </button>
         </div>
       </div>
     </div>

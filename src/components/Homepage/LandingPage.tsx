@@ -1,8 +1,12 @@
 import img1 from "../../../public/images/safety-1.jpg";
 import img2 from "../../../public/images/image2.jpg";
 import img3 from "../../../public/images/imag3.jpeg";
+import { useModal } from "../../context/ModalContext";
+import { HIRE_US } from "../../constants/constants";
 
 function LandingPage() {
+  const { toggleModal } = useModal();
+
   return (
     <div className="m-20 flex justify-center">
       <div className="relative flex flex-col gap-5 ml-50">
@@ -34,7 +38,10 @@ function LandingPage() {
           </span>
         </p>
       </div>
-      <button className="absolute top-[600px] left-65 w-50 bg-red-600 text-white font-semibold py-3 rounded-xl hover:bg-red-900 transition duration-300 shadow-md">
+      <button
+        onClick={() => toggleModal(HIRE_US)}
+        className="absolute top-[600px] left-65 w-50 bg-red-600 text-white font-semibold py-3 rounded-xl hover:bg-red-900 transition duration-300 shadow-md"
+      >
         Book Your Session Now
       </button>
     </div>
