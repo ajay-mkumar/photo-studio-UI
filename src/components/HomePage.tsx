@@ -2,6 +2,7 @@ import img1 from "../../public/images/safety-1.jpg";
 import img2 from "../../public/images/image2.jpg";
 import img3 from "../../public/images/imag3.jpeg";
 import PortfolioCard from "./PortfolioCard";
+import ExpertiseComponent from "./ExpertiseComponent";
 
 function HomePage() {
   return (
@@ -43,6 +44,7 @@ function HomePage() {
         </button>
       </div>
       <PortfolioCard />
+      <ExpertiseComponent />
     </>
   );
 }
