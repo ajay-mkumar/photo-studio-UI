@@ -4,7 +4,7 @@ function PortfolioCard() {
   return (
     <div
       id="photo-section"
-      className="flex justify-center items-center bg-grey-800 gap-10 w-3/4 mx-auto my-10"
+      className="flex justify-center items-center  gap-10 w-3/4 mx-auto my-10"
     >
       <img
         src={portfolio}

@@ -1,5 +1,6 @@
+import Footer from "./components/Footer";
 import HireUsComponent from "./components/HireUsComponent";
-import HomePage from "./components/HomePage";
+import HomePage from "./components/Homepage/HomePage";
 import NavBar from "./components/NavBar";
 import { HIRE_US, HOMEPAGE } from "./constants/constants";
 import { useModal } from "./context/ModalContext";
@@ -13,6 +14,7 @@ function AppContent() {
       <NavBar />
       {modal === HOMEPAGE && <HomePage />}
       {modal === HIRE_US && <HireUsComponent />}
+      <Footer />
     </>
   );
 }
