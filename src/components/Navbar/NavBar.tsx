@@ -1,4 +1,4 @@
-import { HIRE_US } from "../../constants/constants";
+import { HIRE_US, HOMEPAGE } from "../../constants/constants";
 import { useModal } from "../../context/ModalContext";
 
 function NavBar() {
@@ -16,7 +16,7 @@ function NavBar() {
       {/* Center: Menu */}
       <div className="absolute  left-1/2 transform -translate-x-1/2 ">
         <ul className="bg-white rounded-lg px-6  flex gap-6 text-gray-700 text-lg shadow-md font-semibold">
-          <li className="hover:text-red-500 transition duration-200 cursor-pointer">
+          <li className="hover:text-red-500 transition duration-200 cursor-pointer" onClick={() => toggleModal(HOMEPAGE)}>
             Home
           </li>
           <li className="hover:text-red-500 transition duration-200 cursor-pointer">
