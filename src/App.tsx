@@ -1,15 +1,26 @@
-import HomePage from "./components/Homepage"
-import NavBar from "./components/NavBar"
+import HomePage from "./components/HomePage";
+import NavBar from "./components/NavBar";
+import { HIRE_US, HOMEPAGE } from "./constants/constants";
+import { useModal } from "./context/ModalContext";
+import { ModalProvider } from "./context/ModalProvider";
 
-
-function App() {
+function AppContent() {
+  const { modal } = useModal();
 
   return (
-    < >
-    <NavBar />
-    <HomePage />
+    <>
+      <NavBar />
+      {modal === HOMEPAGE && <HomePage />}
+      {modal === HIRE_US && <p>hire</p>}
     </>
-  )
+  );
+}
+function App() {
+  return (
+    <ModalProvider defaultModal={HOMEPAGE}>
+      <AppContent />
+    </ModalProvider>
+  );
 }
 
-export default App
+export default App;

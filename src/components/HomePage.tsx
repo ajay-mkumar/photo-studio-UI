@@ -24,17 +24,17 @@ function HomePage() {
           </span>
           <span className="block text-7xl bg-pink-50 w-110 rounded-t-lg">
             Photography
-          
-          <span className="block pt-10 pr-2 text-sm text-justify bg-pink-50 rounded-lg">
-            At Capture Studio, we specialize in capturing life’s most precious
-            moments, transforming them into timeless works of art. Our team of
-            passionate photographers is dedicated to telling stories through the
-            lens, ensuring that every click captures the essence of your unique
-            journey.
-          </span>
+            <span className="block pt-10 pr-2 text-sm text-justify bg-pink-50 rounded-lg">
+              At Capture Studio, we specialize in capturing life’s most precious
+              moments, transforming them into timeless works of art. Our team of
+              passionate photographers is dedicated to telling stories through
+              the lens, ensuring that every click captures the essence of your
+              unique journey.
+            </span>
           </span>
         </p>
       </div>
+      {/* <button onClick={() => toggleModal("hire")}>hire us</button> */}
     </div>
   );
 }

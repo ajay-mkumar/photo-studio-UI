@@ -1,4 +1,9 @@
+import { HIRE_US } from "../constants/constants";
+import { useModal } from "../context/ModalContext";
+
 function NavBar() {
+  const { toggleModal } = useModal();
+
   return (
     <div className="flex items-center justify-between h-16 px-6 relative">
       {/* Left: Logo */}
@@ -27,7 +32,10 @@ function NavBar() {
       </div>
 
       {/* Right: Button */}
-      <button className="border-pink text-red-500 px-6 py-1 cursor-pointer border rounded-lg shadow hover:bg-red-500 hover:text-white transition duration-200 z-10">
+      <button
+        onClick={() => toggleModal(HIRE_US)}
+        className="border-pink text-red-500 px-6 py-1 cursor-pointer border rounded-lg shadow hover:bg-red-500 hover:text-white transition duration-200 z-10"
+      >
         Hire us
       </button>
     </div>
