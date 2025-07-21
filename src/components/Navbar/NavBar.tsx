@@ -5,7 +5,7 @@ function NavBar() {
   const { toggleModal } = useModal();
 
   return (
-    <div className="flex items-center justify-between h-16 px-6 relative">
+    <div className="hidden sm:flex items-center justify-between h-16 px-6 relative">
       {/* Left: Logo */}
       <h3 className="text-xl font-semibold text-gray-700 z-10 leading tight">
         {" "}
