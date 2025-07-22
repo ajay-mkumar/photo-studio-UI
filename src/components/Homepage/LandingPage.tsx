@@ -53,23 +53,32 @@ function LandingPage() {
 
   if (isMobile) {
     return (
-      <div className="w-screen overflow-hidden relative h-[250px] sm:h-[350px]">
-        <img
-          src={img1}
-          alt="Photography"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-  
-        <div className="absolute top-4 left-4 bg-white/70 backdrop-blur-md p-3 rounded-md shadow-md max-w-[75%]">
-          <p className="text-md font-bold text-black leading-tight">
-            Unleash the Art of <br />
-            <span className="text-red-600">Photography</span>
-          </p>
+      <>
+        <div className="w-screen overflow-hidden relative h-[250px] sm:h-[350px]">
+          <img
+            src={img1}
+            alt="Photography"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+
+          <div className="absolute top-4 left-4 bg-white/70 backdrop-blur-md p-3 rounded-md shadow-md max-w-[75%]">
+            <p className="text-md italic font-semibold text-black leading-tight">
+              Unleash the Art of <br />
+              <span className="text-red-600">Photography</span>
+            </p>
+          </div>
         </div>
-      </div>
+        <p className="text-sm text-justify leading-relaxed tracking-wide text-gray-700 px-6 py-4">
+          At <span className="font-semibold text-black">Capture Studio</span>,
+          we specialize in preserving life’s most cherished moments, turning
+          fleeting instants into timeless masterpieces. Our passionate team of
+          photographers doesn't just take pictures — they craft visual stories
+          that echo your unique journey with every frame, every flicker, every
+          flash.
+        </p>
+      </>
     );
   }
-  
 }
 
 export default LandingPage;
