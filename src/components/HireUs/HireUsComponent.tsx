@@ -11,7 +11,7 @@ function HireUsComponent() {
       <form className="w-full max-w-2xl bg-white p-10 rounded-3xl shadow-2xl flex flex-col gap-6">
          {/* Close Button */}
       <button
-        className="absolute right-[350px] text-sm font-bold text-red-500 bg-white rounded-full shadow-md w-10 h-10 flex items-center justify-center hover:bg-red-100 transition"
+        className="absolute right-6 sm:right-[350px] text-sm font-bold text-red-500 bg-white rounded-full shadow-md w-10 h-10 flex items-center justify-center hover:bg-red-100 transition"
         onClick={() => toggleModal(HOMEPAGE)}
       >
         X
@@ -53,7 +53,7 @@ function HireUsComponent() {
   
         <button
           type="submit"
-          className="w-1/4 bg-gradient-to-r from-pink-500 to-pink-700 text-white font-semibold py-3 rounded-xl hover:from-blue-600 hover:to-blue-800 transition duration-300 shadow-md"
+          className="sm:w-1/4 bg-gradient-to-r from-pink-500 to-pink-700 text-white font-semibold py-3 rounded-xl hover:from-blue-600 hover:to-blue-800 transition duration-300 shadow-md"
         >
           Send Message
         </button>
