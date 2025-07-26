@@ -18,16 +18,20 @@ function HireUsComponent() {
     isSuccess: boolean;
     message: string;
   } | null>(null);
+  const [isSending, setIsSending] = useState(false);
 
   const sendMail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsSending(true);
     emailJs
       .sendForm(serviceId, templateId, e.target as HTMLFormElement, publicKey)
       .then((result) => {
+        setIsSending(false);
         console.log("messgae sent", result.text);
         setEmailModalInfo({ isSuccess: true, message: SUCCESS_EMAIL_MESSAGE });
       })
       .catch((err) => {
+        setIsSending(false);
         console.log("error sending mail", err.text);
         setEmailModalInfo({ isSuccess: false, message: FAILURE_EMAIL_MESSAGE });
       });
@@ -125,7 +129,14 @@ function HireUsComponent() {
               type="submit"
               className="sm:w-1/4 bg-gradient-to-r from-pink-500 to-pink-700 text-white font-semibold py-3 rounded-xl hover:from-blue-600 hover:to-blue-800 transition duration-300 shadow-md"
             >
-              Send Message
+              {isSending ? (
+                <div className="flex gap-2">
+                  <span className="animate-pulse">📨</span>
+                  sending...
+                </div>
+              ) : (
+                <span>Send Message</span>
+              )}
             </button>
           </form>
         </div>
