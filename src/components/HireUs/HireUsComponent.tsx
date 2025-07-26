@@ -1,10 +1,10 @@
 import { HOMEPAGE } from "../../constants/constants";
 import { useModal } from "../../context/ModalContext";
-import emailJs from "emailjs-com";
+import emailJs from "@emailjs/browser";
 
-const serviceId :string = import.meta.env.SERVICE_ID;
-const templateId = import.meta.env.TEMPLATE_ID;
-const publicKey = import.meta.env.PUBLIC_KEY;
+const serviceId: string = import.meta.env.VITE_EMAIL_SERVICE_ID;
+const templateId = import.meta.env.VITE_EMAIL_TEMPLATE_ID;
+const publicKey = import.meta.env.VITE_EMAIL_PUBLIC_KEY;
 
 function HireUsComponent() {
   const { toggleModal } = useModal();
@@ -48,6 +48,18 @@ function HireUsComponent() {
             id="name"
             name="name"
             placeholder="Enter your name"
+            className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 bg-blue-50"
+          />
+        </div>
+        <div className="flex flex-col gap-2">
+          <label htmlFor="title" className="text-sm font-semibold text-gray-700">
+            Subject
+          </label>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            placeholder="Enter your subject"
             className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 bg-blue-50"
           />
         </div>
