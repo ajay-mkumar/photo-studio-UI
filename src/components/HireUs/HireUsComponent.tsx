@@ -127,6 +127,7 @@ function HireUsComponent() {
 
             <button
               type="submit"
+              disabled={isSending}
               className="sm:w-1/4 bg-gradient-to-r from-pink-500 to-pink-700 text-white font-semibold py-3 rounded-xl hover:from-blue-600 hover:to-blue-800 transition duration-300 shadow-md"
             >
               {isSending ? (
