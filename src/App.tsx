@@ -13,13 +13,15 @@ function AppContent() {
   const { modal } = useModal();
 
   return (
-    <div className="pb-16">
+    <div className="min-h-screen flex flex-col pb-16">
+      <main className="flex-grow">
       <MobileHeader />
       <NavBar />
       {modal === HOMEPAGE && <HomePage />}
       {modal === HIRE_US && <HireUsComponent />}
       {modal === PORTFOLIO && <Portfolio />}
       <MobileNavBar />
+      </main>
       <Footer />
     </div>
   );
