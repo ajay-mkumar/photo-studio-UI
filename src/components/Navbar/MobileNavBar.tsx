@@ -1,6 +1,6 @@
 import { Home, User, Briefcase, Image } from "lucide-react";
 import { useModal } from "../../context/ModalContext";
-import { HIRE_US, HOMEPAGE } from "../../constants/constants";
+import { HIRE_US, HOMEPAGE, PORTFOLIO } from "../../constants/constants";
 
 function MobileNavBar() {
   const { toggleModal } = useModal();
@@ -15,7 +15,7 @@ function MobileNavBar() {
         />
         <NavItem icon={<Briefcase />} label="Services" onClick={() => toggleModal(HIRE_US)} />
         <NavItem icon={<User />} label="About Us" />
-        <NavItem icon={<Image />} label="Portfolio" />
+        <NavItem icon={<Image />} onClick={() => toggleModal(PORTFOLIO)} label="Portfolio" />
       </div>
     </div>
   );

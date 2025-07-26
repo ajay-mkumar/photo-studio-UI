@@ -1,4 +1,4 @@
-import { HIRE_US, HOMEPAGE } from "../../constants/constants";
+import { HIRE_US, HOMEPAGE, PORTFOLIO } from "../../constants/constants";
 import { useModal } from "../../context/ModalContext";
 
 function NavBar() {
@@ -25,7 +25,7 @@ function NavBar() {
           <li className="hover:text-red-500 transition duration-200 cursor-pointer">
             About Us
           </li>
-          <li className="hover:text-red-500 transition duration-200 cursor-pointer">
+          <li className="hover:text-red-500 transition duration-200 cursor-pointer" onClick={() => toggleModal(PORTFOLIO)}>
             Portfolio
           </li>
         </ul>
