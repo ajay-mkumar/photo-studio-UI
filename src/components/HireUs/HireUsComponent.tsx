@@ -6,9 +6,9 @@ import {
 import { useModal } from "../../context/ModalContext";
 import emailJs from "@emailjs/browser";
 import EmailModal from "./EmailModal";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
-const serviceId: string = import.meta.env.VITE_EMAIL_SERVICE_ID;
+const serviceId = import.meta.env.VITE_EMAIL_SERVICE_ID;
 const templateId = import.meta.env.VITE_EMAIL_TEMPLATE_ID;
 const publicKey = import.meta.env.VITE_EMAIL_PUBLIC_KEY;
 
@@ -19,15 +19,39 @@ function HireUsComponent() {
     message: string;
   } | null>(null);
   const [isSending, setIsSending] = useState(false);
+  const nameRef = useRef<HTMLInputElement>(null);
+  const titleRef = useRef<HTMLInputElement>(null);
+  const emailRef = useRef<HTMLInputElement>(null);
+  const messageRef = useRef<HTMLTextAreaElement>(null);
 
   const sendMail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    const name = nameRef.current?.value.trim();
+    const title = titleRef.current?.value.trim();
+    const email = emailRef.current?.value.trim();
+    const message = messageRef.current?.value.trim();
+
+    // Simple validation
+    if (!name || !title || !email || !message) {
+      alert("All fields are required");
+      return;
+    }
+
+    // Basic email format check
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      alert("Please provide a valid email");
+      return;
+    }
+
     setIsSending(true);
+
     emailJs
       .sendForm(serviceId, templateId, e.target as HTMLFormElement, publicKey)
       .then((result) => {
         setIsSending(false);
-        console.log("messgae sent", result.text);
+        console.log("message sent", result.text);
         setEmailModalInfo({ isSuccess: true, message: SUCCESS_EMAIL_MESSAGE });
       })
       .catch((err) => {
@@ -71,6 +95,7 @@ function HireUsComponent() {
               </label>
               <input
                 type="text"
+                ref={nameRef}
                 id="name"
                 name="name"
                 placeholder="Enter your name"
@@ -86,6 +111,7 @@ function HireUsComponent() {
               </label>
               <input
                 type="text"
+                ref={titleRef}
                 id="title"
                 name="title"
                 placeholder="Enter your subject"
@@ -104,6 +130,7 @@ function HireUsComponent() {
                 type="email"
                 id="email"
                 name="email"
+                ref={emailRef}
                 placeholder="Enter your email"
                 className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 bg-blue-50"
               />
@@ -118,6 +145,7 @@ function HireUsComponent() {
               </label>
               <textarea
                 id="message"
+                ref={messageRef}
                 name="message"
                 rows={4}
                 placeholder="What's on your mind?"
